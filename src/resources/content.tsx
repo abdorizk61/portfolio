@@ -123,10 +123,9 @@ const about: About = {
         images: [],
       },
     ],
-  },
-  studies: {
+  },studies: {
     display: true,
-    title: "Studies",
+    title: "Education & Certifications",
     institutions: [
       {
         name: "Capital University",
@@ -136,8 +135,31 @@ const about: About = {
         name: "EraaSoft Academy",
         description: (
           <>
-            Data Science Course Certification (Completed February 2026) — comprehensive training
-            in data analysis, machine learning algorithms, and AI engineering practices.
+            <strong>AI Diploma:</strong> Comprehensive professional diploma covering Machine Learning, 
+            Deep Learning, Computer Vision, and generative architectures (Completed August 2026)[cite: 6].
+            <div style={{ marginTop: "12px", borderRadius: "8px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)" }}>
+              <img
+                src="/images/certificates/eraasoft-ai-diploma.jpg"
+                alt="EraaSoft AI Diploma Certificate"
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
+            </div>
+          </>
+        ),
+      },
+      {
+        name: "Creativa Hub (ITIDA / EME)",
+        description: (
+          <>
+            <strong>Machine Learning Program:</strong> 25-hour specialized offline program focused on foundational 
+            data pipelines, model optimization, and deployment of the "Spaceship Titanic" project (Completed February 2025)[cite: 5].
+            <div style={{ marginTop: "12px", borderRadius: "8px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)" }}>
+              <img
+                src="/images/certificates/creativa-machine-learning.jpg"
+                alt="Creativa ITIDA Machine Learning Certificate"
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
+            </div>
           </>
         ),
       },
@@ -223,6 +245,7 @@ const about: About = {
     ],
   },
 };
+
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
@@ -244,4 +267,5 @@ const gallery: Gallery = {
   description: `A photo collection by ${person.name}`,
   images: [],
 };
+
 export { person, social, newsletter, home, about, blog, work, gallery };
