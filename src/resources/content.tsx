@@ -145,31 +145,38 @@ const about: About = {
       },
     ],
   },
-  technical: {
-    display: true, // set to false to hide this section
+technical: {
+    display: true,
     title: "Technical skills",
     skills: [
       {
-        title: "Machine Learning & Data Science",
+        title: "Generative AI & RAG Systems",
         description: (
           <>
-            Supervised and unsupervised learning, regression analysis, neural networks, and deep
-            learning, with strong data preprocessing and feature engineering fundamentals.
+            Architecting end-to-end Retrieval-Augmented Generation pipelines using LangChain
+            and ChromaDB. Deploying quantized local LLMs (Phi-3, Qwen) via Ollama for private,
+            offline contextual document Q&A.
           </>
         ),
         tags: [
-          {
-            name: "Python",
-            icon: "python",
-          },
-          {
-            name: "Scikit-learn",
-            icon: "scikitlearn",
-          },
-          {
-            name: "TensorFlow",
-            icon: "tensorflow",
-          },
+          { name: "Python", icon: "python" },
+          { name: "LangChain", icon: "globe" },
+          { name: "Ollama", icon: "terminal" },
+        ],
+        images: [],
+      },
+      {
+        title: "Machine Learning & Deep Learning",
+        description: (
+          <>
+            Supervised and unsupervised learning, regularized regression modeling, neural network
+            classification (ANNs), and extensive feature engineering, data imputation, and metric evaluation.
+          </>
+        ),
+        tags: [
+          { name: "Scikit-learn", icon: "scikitlearn" },
+          { name: "TensorFlow", icon: "tensorflow" },
+          { name: "Pandas", icon: "python" },
         ],
         images: [],
       },
@@ -177,39 +184,41 @@ const about: About = {
         title: "Computer Vision",
         description: (
           <>
-            Building object detection and tracking pipelines with YOLO for real-time video
-            analysis in dynamic environments.
+            Developing real-time multi-object detection and dynamic object tracking systems
+            leveraging YOLO architectures, OpenCV, and Supervision video annotation frameworks.
           </>
         ),
         tags: [
-          {
-            name: "Python",
-            icon: "python",
-          },
-          {
-            name: "YOLO",
-            icon: "opencv",
-          },
+          { name: "YOLO", icon: "opencv" },
+          { name: "OpenCV", icon: "python" },
         ],
         images: [],
       },
       {
-        title: "Tools & Environments",
+        title: "Model Deployment & Interactive Interfaces",
         description: (
           <>
-            Comfortable working across Python, Java, C, and JavaScript, with Pandas, NumPy, and
-            Keras, in Linux (Fedora OS) environments using Git/GitHub and Notion.
+            Building and deploying intuitive web interfaces for machine learning workflows and
+            local AI assistants using Gradio and Streamlit.
           </>
         ),
         tags: [
-          {
-            name: "Git",
-            icon: "github",
-          },
-          {
-            name: "Linux",
-            icon: "terminal",
-          },
+          { name: "Gradio", icon: "globe" },
+          { name: "Streamlit", icon: "globe" },
+        ],
+        images: [],
+      },
+      {
+        title: "Environments & Workflow Automation",
+        description: (
+          <>
+            Proficient in Linux (Fedora OS) environments, Git/GitHub version control, AI automation
+            workflows with n8n, and structured project management in Notion.
+          </>
+        ),
+        tags: [
+          { name: "Linux", icon: "terminal" },
+          { name: "Git", icon: "github" },
         ],
         images: [],
       },
