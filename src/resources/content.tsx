@@ -5,46 +5,44 @@ const person: Person = {
   firstName: "Abdelrahman",
   lastName: "Rizk",
   name: `Abdelrahman Rizk`,
-  role: "Aspiring AI & Machine Learning Engineer",
+  role: "AI & Machine Learning Engineer",
   avatar: "/images/avatar.jpg",
   email: "rizkabdo61@gmail.com",
   location: "Africa/Cairo", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["Arabic", "English"], // optional: Leave the array empty if you don't want to display languages
-  locale: "en", // BCP 47 language tag for the HTML lang attribute, e.g., 'en', 'ja', 'zh-TW'
+  languages: ["Arabic", "English"],
+  locale: "en",
 };
 
 const newsletter: Newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My notes on AI, machine learning, and building intelligent systems</>,
+  title: <>Work with {person.firstName}</>,
+  description: (
+    <>
+      Have an AI, Computer Vision, or RAG project in mind? Let’s connect and discuss building a production-ready solution.
+    </>
+  ),
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
-  {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/abdorizk61",
-    essential: true,
-  },
-  {
-        name: 'Kaggle',
-        icon: 'kaggle', 
-        link: 'https://www.kaggle.com/abdoelmaghraby',
-  },
   {
     name: "LinkedIn",
     icon: "linkedin",
     link: "https://www.linkedin.com/in/abdelrahman-elmaghraby-33b67b345",
-    essential: true,
   },
   {
-    name: "Email",
+    name: "Email Me",
     icon: "email",
-    link: `mailto:${person.email}`,
-    essential: true,
+    link: "mailto:rizkabdo61@gmail.com",
+  },
+  {
+    name: "GitHub",
+    icon: "github",
+    link: "https://github.com/abdorizk61",
+  },
+  {
+    name: "Kaggle",
+    icon: "globe",
+    link: "https://www.kaggle.com/abdoelmaghraby",
   },
 ];
 
@@ -52,26 +50,27 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as an ${person.role}`,
-  headline: <>Building intelligent systems with data and code</>,
+  title: `${person.name} – AI & Machine Learning Engineer`,
+  description: `Portfolio showcasing production-ready AI solutions, RAG pipelines, and Machine Learning systems by ${person.name}`,
+  headline: <>Building intelligent, production-ready AI solutions</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">YOLO Vision</strong>{" "}
+        <strong className="ml-4">RAG Assistant</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured project
         </Text>
       </Row>
     ),
-    href: "/work/real-time-object-detection-and-tracking-system",
+    href: "/work/ai-research-assistant-rag",
   },
   subline: (
     <>
-      I'm {person.firstName}, an {person.role.toLowerCase()} with a foundation in{" "}
-      <Text as="span" size="xl" weight="strong">Data Science &amp; Machine Learning</Text>. <br /> I build predictive models, neural networks, and computer vision applications with Python.
+      I help teams and businesses engineer private{" "}
+      <Text as="span" size="xl" weight="strong">RAG Knowledge Systems</Text>, deploy real-time{" "}
+      <Text as="span" size="xl" weight="strong">Computer Vision Pipelines</Text>, and build predictive ML models with intuitive web interfaces.
     </>
   ),
 };
@@ -94,18 +93,17 @@ const about: About = {
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "Scope & Engineering Focus",
     description: (
       <>
-        {person.firstName} is a dedicated and detail-oriented {person.role.toLowerCase()} with a strong foundation
-        in Data Science, Machine Learning, and Software Engineering. He has hands-on experience developing
-        predictive models, neural networks, and computer vision applications using Python, and is skilled at
-        problem-solving and optimizing algorithms in Linux environments (Fedora OS).
+        {person.firstName} is an AI &amp; Machine Learning Engineer specializing in transforming complex data into robust, deployable intelligent systems. His core expertise spans developing private, offline Retrieval-Augmented Generation (RAG) architectures with local LLMs, real-time object tracking using YOLO and Supervision, and regularized predictive regression systems with interactive web UIs.
+        <br /><br />
+        <Text as="span" weight="strong">Available for:</Text> Machine Learning Engineering roles, Generative AI &amp; RAG consulting, and Computer Vision development contracts.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Experience",
     experiences: [
       {
@@ -127,7 +125,7 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Studies",
     institutions: [
       {
@@ -145,7 +143,7 @@ const about: About = {
       },
     ],
   },
-technical: {
+  technical: {
     display: true,
     title: "Technical skills",
     skills: [
@@ -231,8 +229,6 @@ const blog: Blog = {
   label: "Blog",
   title: "Writing about AI and machine learning...",
   description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
 };
 
 const work: Work = {
@@ -240,8 +236,6 @@ const work: Work = {
   label: "Work",
   title: `Projects – ${person.name}`,
   description: `AI, machine learning, and data science projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
 };
 
 const gallery: Gallery = {
@@ -249,7 +243,6 @@ const gallery: Gallery = {
   label: "Gallery",
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
-  // Add your own images to /public/images/gallery and list them here
   images: [],
 };
 
