@@ -223,7 +223,6 @@ const about: About = {
     ],
   },
 };
-
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
@@ -245,5 +244,4 @@ const gallery: Gallery = {
   description: `A photo collection by ${person.name}`,
   images: [],
 };
-
 export { person, social, newsletter, home, about, blog, work, gallery };
