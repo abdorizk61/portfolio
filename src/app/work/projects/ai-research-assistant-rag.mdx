@@ -1,0 +1,64 @@
+---
+title: "Autonomous AI Research Assistant with RAG & Local LLMs"
+publishedAt: "2026-09-05"
+summary: "An end-to-end contextual Question-Answering assistant utilizing LangChain, ChromaDB vector indexing, and local open-source LLMs via Ollama with an interactive Gradio UI."
+images:
+  - "/images/projects/project-01/cover.jpg"
+team:
+  - name: "Abdelrahman Rizk"
+    role: "AI & RAG Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/abdelrahman-elmaghraby-33b67b345"
+---
+
+## Project Overview
+
+With the rapid expansion of academic and technical literature, efficiently querying domain-specific documents without data leakage or high API costs is a critical challenge. In this project, I developed an end-to-end **AI Research Assistant** that operates entirely locally to synthesize, retrieve, and summarize dense research materials.
+
+The system uses a **Retrieval-Augmented Generation (RAG)** pipeline to index complex PDF documentation, perform high-dimensional vector search, and generate grounded answers using quantized local Large Language Models.
+
+---
+
+## Architectural Pipeline
+
+1. **Document Ingestion & Chunking:**
+   - Parsed structured and unstructured technical PDFs.
+   - Applied dynamic recursive character text splitters to preserve contextual continuity while maintaining optimal chunk overlaps.
+
+2. **Vector Embeddings & Semantic Indexing:**
+   - Generated dense semantic representations using HuggingFace sentence transformers.
+   - Persisted embeddings into a local **ChromaDB** vector store configured with Cosine Similarity for fast vector search.
+
+3. **Contextual Retrieval & Prompt Chaining:**
+   - Integrated **LangChain** retrieval chains with custom system prompting to mitigate hallucinations and restrict responses strictly to retrieved source context.
+   - Implemented Source Attribution to cite specific document chunks alongside generated responses.
+
+4. **Local LLM Inference Engine:**
+   - Deployed high-efficiency open-source models (such as Phi-3 and Qwen architectures) running locally via **Ollama**, ensuring 100% privacy and zero cloud inference costs.
+
+5. **User Interface & Interaction:**
+   - Designed and built a responsive, interactive web application using **Gradio** allowing multi-turn research conversations and instant document uploads.
+
+---
+
+## Tech Stack & Tools
+
+- **Core Technologies:** Python, LangChain, ChromaDB, Ollama
+- **Models:** Phi-3, Qwen, Open-Source Sentence Transformers
+- **Frontend / UI:** Gradio
+- **Development Environment:** Linux (Fedora OS), VS Code
+
+---
+
+## Key Achievements
+
+- **Zero Cloud Costs & Total Privacy:** Fully functional offline RAG pipeline keeping all sensitive documents on local storage.
+- **High Retrieval Accuracy:** Reduced hallucination rates by combining strict grounding system prompts with cosine similarity threshold filtering.
+- **Low Latency:** Optimized chunk sizes and quantized weights to achieve responsive token generation on local hardware.
+
+---
+
+## Links & Code
+
+- **GitHub Repository:** [View Project on GitHub](https://github.com/abdorizk61)
+- **LinkedIn Profile:** [Connect on LinkedIn](https://www.linkedin.com/in/abdelrahman-elmaghraby-33b67b345)
