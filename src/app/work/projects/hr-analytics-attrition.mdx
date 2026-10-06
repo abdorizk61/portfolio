@@ -1,0 +1,68 @@
+---
+title: "HR Analytics & Employee Attrition Prediction"
+publishedAt: "2026-10-06"
+summary: "An end-to-end HR analytics and predictive modeling platform designed to analyze workforce trends and predict employee attrition risk, containerized with Docker and featuring an interactive Streamlit dashboard."
+images:
+  - "/images/projects/hr-analytics/hr-analytics.png"
+team:
+  - name: "Abdelrahman Rizk"
+    role: "Data Scientist & ML Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/abdelrahman-elmaghraby-33b67b345"
+---
+
+## Project Overview
+
+Employee attrition is one of the most costly and disruptive challenges facing modern organizations. In this project, I built a full **HR Analytics & Employee Attrition Prediction** platform that combines exploratory workforce analysis with a production-ready machine learning pipeline to identify employees at high risk of leaving — enabling HR teams to take proactive retention measures.
+
+The solution is fully **containerized with Docker** and ships an interactive **Streamlit dashboard** that allows HR professionals to explore attrition drivers, filter workforce segments, and run real-time predictions without any coding knowledge.
+
+---
+
+## Analytical & Modeling Pipeline
+
+1. **Exploratory Data Analysis (EDA):**
+   - Investigated workforce demographics, department distributions, job satisfaction scores, and salary bands using **Pandas** and **Seaborn**.
+   - Visualized attrition rates across key HR dimensions (tenure, overtime, promotion history) to surface actionable insights.
+
+2. **Feature Engineering & Preprocessing:**
+   - Encoded categorical HR attributes (department, job role, education field) using target and ordinal encoding strategies.
+   - Applied feature scaling and handled class imbalance via **SMOTE** to improve model sensitivity toward the minority attrition class.
+
+3. **Predictive Modeling:**
+   - Trained and benchmarked multiple **Scikit-Learn** classifiers including Logistic Regression, Random Forest, and Gradient Boosting.
+   - Performed hyperparameter tuning with cross-validated grid search to maximize **F1-Score** and **Recall**, minimizing the cost of false negatives.
+
+4. **Interactive Dashboard:**
+   - Built a multi-page **Streamlit** application for HR stakeholders featuring live attrition risk scoring, feature importance charts, and filterable workforce analytics panels.
+
+5. **Containerization & Deployment:**
+   - Packaged the entire application — model artifacts, data pipeline, and dashboard — into a **Docker** container for consistent, reproducible deployment across any environment.
+
+---
+
+## Tech Stack & Tools
+
+- **Language:** Python
+- **Machine Learning:** Scikit-Learn, Machine Learning
+- **Data Analysis:** Pandas, Seaborn
+- **Frontend / UI:** Streamlit
+- **Containerization:** Docker
+- **Environment:** Linux, VS Code / Jupyter Notebook
+
+---
+
+## Key Achievements
+
+- **End-to-End Pipeline:** Delivered a complete solution from raw HR data ingestion through model training to a live interactive dashboard.
+- **Interpretable Predictions:** Surfaced top attrition drivers (overtime, job satisfaction, years since last promotion) using feature importance rankings to support explainable HR decisions.
+- **Reproducible Deployment:** Docker containerization ensures zero-dependency installation — the full stack runs with a single `docker compose up` command.
+- **Stakeholder-Friendly UI:** The Streamlit dashboard empowers non-technical HR teams to explore predictions and filter analytics without writing a single line of code.
+
+---
+
+## Links & Code
+
+- **GitHub Repository:** [View Project on GitHub](https://github.com/abdorizk61/HR-Analytics-project)
+- **LinkedIn Profile:** [Connect on LinkedIn](https://www.linkedin.com/in/abdelrahman-elmaghraby-33b67b345)
+
