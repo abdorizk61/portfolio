@@ -1,9 +1,9 @@
 ---
-title: "Autonomous AI Research Assistant with RAG & Local LLMs"
+title: "AI Research Assistant"
 publishedAt: "2026-09-05"
-summary: "An end-to-end contextual Question-Answering assistant utilizing LangChain, ChromaDB vector indexing, and local open-source LLMs via Ollama with an interactive Gradio UI."
+summary: "An intelligent Retrieval-Augmented Generation (RAG) assistant designed to ingest, process, and query research papers and documents using local embeddings and vector search to deliver accurate, citation-backed answers."
 images:
-  - "/images/projects/rag/cover.jpg"
+  - "/images/projects/rag/ai-research-assistant.png"
 team:
   - name: "Abdelrahman Rizk"
     role: "AI & RAG Engineer"
@@ -15,7 +15,7 @@ team:
 
 With the rapid expansion of academic and technical literature, efficiently querying domain-specific documents without data leakage or high API costs is a critical challenge. In this project, I developed an end-to-end **AI Research Assistant** that operates entirely locally to synthesize, retrieve, and summarize dense research materials.
 
-The system uses a **Retrieval-Augmented Generation (RAG)** pipeline to index complex PDF documentation, perform high-dimensional vector search, and generate grounded answers using quantized local Large Language Models.
+The system uses a **Retrieval-Augmented Generation (RAG)** pipeline to ingest, process, and query research papers and documents using local embeddings and vector search, delivering accurate, citation-backed answers.
 
 ---
 
@@ -34,18 +34,18 @@ The system uses a **Retrieval-Augmented Generation (RAG)** pipeline to index com
    - Implemented Source Attribution to cite specific document chunks alongside generated responses.
 
 4. **Local LLM Inference Engine:**
-   - Deployed high-efficiency open-source models (such as Phi-3 and Qwen architectures) running locally via **Ollama**, ensuring 100% privacy and zero cloud inference costs.
+   - Deployed high-efficiency open-source models running locally via **Ollama**, ensuring 100% privacy and zero cloud inference costs.
 
 5. **User Interface & Interaction:**
-   - Designed and built a responsive, interactive web application using **Gradio** allowing multi-turn research conversations and instant document uploads.
+   - Designed and built a responsive, interactive web application using **Streamlit** allowing multi-turn research conversations and instant document uploads.
 
 ---
 
 ## Tech Stack & Tools
 
-- **Core Technologies:** Python, LangChain, ChromaDB, Ollama
-- **Models:** Phi-3, Qwen, Open-Source Sentence Transformers
-- **Frontend / UI:** Gradio
+- **Core Technologies:** Python, LangChain, ChromaDB, Ollama, RAG
+- **Models:** Open-Source Sentence Transformers, Local LLMs via Ollama
+- **Frontend / UI:** Streamlit
 - **Development Environment:** Linux (Fedora OS), VS Code
 
 ---
@@ -55,10 +55,11 @@ The system uses a **Retrieval-Augmented Generation (RAG)** pipeline to index com
 - **Zero Cloud Costs & Total Privacy:** Fully functional offline RAG pipeline keeping all sensitive documents on local storage.
 - **High Retrieval Accuracy:** Reduced hallucination rates by combining strict grounding system prompts with cosine similarity threshold filtering.
 - **Low Latency:** Optimized chunk sizes and quantized weights to achieve responsive token generation on local hardware.
+- **Citation-Backed Answers:** Every response includes source attribution linking back to the exact document chunks retrieved.
 
 ---
 
 ## Links & Code
 
-- **GitHub Repository:** [View Project on GitHub](https://github.com/abdorizk61)
+- **GitHub Repository:** [View Project on GitHub](https://github.com/abdorizk61/AI-Research-Assistant)
 - **LinkedIn Profile:** [Connect on LinkedIn](https://www.linkedin.com/in/abdelrahman-elmaghraby-33b67b345)
