@@ -1,18 +1,6 @@
-import {
-  Heading,
-  Text,
-  Button,
-  Avatar,
-  RevealFx,
-  Column,
-  Badge,
-  Row,
-  Schema,
-  Meta,
-  Line,
-} from "@once-ui-system/core";
+import { Heading, Text, RevealFx, Column, Row, Schema, Meta, Line } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
-import { Mailchimp } from "@/components";
+import { Mailchimp, InteractiveTerminal, HeroSection } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
 
@@ -28,7 +16,7 @@ export async function generateMetadata() {
 
 export default function Home() {
   return (
-    <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
+    <Column maxWidth="l" gap="xl" paddingY="12" horizontal="center" fillWidth>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -42,67 +30,69 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column fillWidth horizontal="center" gap="m">
-        <Column maxWidth="s" horizontal="center" align="center">
-          {home.featured.display && (
-            <RevealFx
-              fillWidth
-              horizontal="center"
-              paddingTop="16"
-              paddingBottom="32"
-              paddingLeft="12"
-            >
-              <Badge
-                background="brand-alpha-weak"
-                paddingX="12"
-                paddingY="4"
-                onBackground="neutral-strong"
-                textVariant="label-default-s"
-                arrow={false}
-                href={home.featured.href}
-              >
-                <Row paddingY="2">{home.featured.title}</Row>
-              </Badge>
-            </RevealFx>
-          )}
-          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16">
-            <Heading wrap="balance" variant="display-strong-l">
-              {home.headline}
-            </Heading>
-          </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="32">
-            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
-              {home.subline}
-            </Text>
-          </RevealFx>
-          <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">
-            <Button
-              id="about"
-              data-border="rounded"
-              href={about.path}
-              variant="secondary"
-              size="m"
-              weight="default"
-              arrowIcon
-            >
-              <Row gap="8" vertical="center" paddingRight="4">
-                {about.avatar.display && (
-                  <Avatar
-                    marginRight="8"
-                    style={{ marginLeft: "-0.75rem" }}
-                    src={person.avatar}
-                    size="m"
-                  />
-                )}
-                {about.title}
-              </Row>
-            </Button>
-          </RevealFx>
-        </Column>
-      </Column>
-      <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
+
+      {/* ── Matrix SOC Hero Section ── */}
+      <RevealFx fillWidth>
+        <HeroSection />
       </RevealFx>
+
+      {/* ── Featured Projects Section ── */}
+      <div id="projects" style={{ width: "100%", scrollMarginTop: "80px" }}>
+        <RevealFx translateY="16" delay={0.2} fillWidth>
+          <Projects range={[1, 1]} />
+        </RevealFx>
+      </div>
+
+      {/* ── Interactive Shell Section ── */}
+      <div id="terminal" style={{ width: "100%", scrollMarginTop: "80px" }}>
+        <RevealFx translateY="16" delay={0.3} fillWidth>
+          <Column fillWidth gap="20">
+            {/* Section header */}
+            <Column fillWidth gap="4">
+              <Row fillWidth vertical="center" gap="12">
+                <Heading as="h2" variant="heading-strong-l" style={{ color: "#ffffff" }}>
+                  Terminal
+                </Heading>
+                <span
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    padding: "2px 8px",
+                    border: "1px solid rgba(0, 255, 65, 0.4)",
+                    backgroundColor: "rgba(0, 255, 65, 0.08)",
+                    color: "#00FF41",
+                    fontFamily: "var(--font-code, monospace)",
+                    fontSize: "0.75rem",
+                    letterSpacing: "0.08em",
+                    borderRadius: "2px",
+                    boxShadow: "0 0 8px rgba(0, 255, 65, 0.25)",
+                  }}
+                >
+                  interactive
+                </span>
+              </Row>
+              <Text onBackground="neutral-weak" variant="body-default-s">
+                A live CLI — type{" "}
+                <Text
+                  as="span"
+                  style={{
+                    color: "#00FF41",
+                    fontFamily: "var(--font-code, monospace)",
+                    fontWeight: 700,
+                  }}
+                  variant="label-default-s"
+                >
+                  help
+                </Text>{" "}
+                to get started, or click any chip below the terminal.
+              </Text>
+            </Column>
+
+            <InteractiveTerminal />
+          </Column>
+        </RevealFx>
+      </div>
+
       {routes["/blog"] && (
         <Column fillWidth gap="24" marginBottom="l">
           <Row fillWidth paddingRight="64">
@@ -123,8 +113,16 @@ export default function Home() {
           </Row>
         </Column>
       )}
-      <Projects range={[2]} />
-      <Mailchimp />
+
+      {/* ── Additional Projects ── */}
+      <RevealFx translateY="16" delay={0.4} fillWidth>
+        <Projects range={[2]} />
+      </RevealFx>
+
+      {/* ── Contact Section ── */}
+      <div id="contact" style={{ width: "100%", scrollMarginTop: "80px" }}>
+        <Mailchimp />
+      </div>
     </Column>
   );
 }

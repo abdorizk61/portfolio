@@ -1,4 +1,5 @@
 export { Header } from "@/components/Header";
+export { Navbar } from "@/components/Navbar";
 export { Footer } from "@/components/Footer";
 export { Mailchimp } from "@/components/Mailchimp";
 export { ProjectCard } from "@/components/ProjectCard";
@@ -8,3 +9,9 @@ export { Providers } from "@/components/Providers";
 export { ScrollToHash } from "@/components/ScrollToHash";
 export { ThemeToggle } from "@/components/ThemeToggle";
 export { CustomMDX } from "@/components/mdx";
+export { Terminal } from "@/components/Terminal";
+export { InteractiveTerminal } from "@/components/InteractiveTerminal";
+export { HeroFrame } from "@/components/HeroFrame";
+export { CircularHUD } from "@/components/CircularHUD";
+export { MatrixRain } from "@/components/MatrixRain";
+export { HeroSection } from "@/components/HeroSection";

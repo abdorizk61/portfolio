@@ -18,7 +18,8 @@ const newsletter: Newsletter = {
   title: <>Work with {person.firstName}</>,
   description: (
     <>
-      Have an AI, Computer Vision, or RAG project in mind? Let’s connect and discuss building a production-ready solution.
+      Have an AI, Computer Vision, or RAG project in mind? Let’s connect and discuss building a
+      production-ready solution.
     </>
   ),
 };
@@ -27,22 +28,26 @@ const social: Social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/abdelrahman-elmaghraby-33b67b345",
+    link: "https://www.linkedin.com/in/abdelrahman-rizk-33b67b345",
+    essential: true,
   },
   {
     name: "Email Me",
     icon: "email",
     link: "mailto:rizkabdo61@gmail.com",
+    essential: true,
   },
   {
     name: "GitHub",
     icon: "github",
     link: "https://github.com/abdorizk61",
+    essential: true,
   },
   {
     name: "Kaggle",
     icon: "globe",
     link: "https://www.kaggle.com/abdoelmaghraby",
+    essential: true,
   },
 ];
 
@@ -69,8 +74,14 @@ const home: Home = {
   subline: (
     <>
       I help teams and businesses engineer private{" "}
-      <Text as="span" size="xl" weight="strong">RAG Knowledge Systems</Text>, deploy real-time{" "}
-      <Text as="span" size="xl" weight="strong">Computer Vision Pipelines</Text>, and build predictive ML models with intuitive web interfaces.
+      <Text as="span" size="xl" weight="strong">
+        RAG Knowledge Systems
+      </Text>
+      , deploy real-time{" "}
+      <Text as="span" size="xl" weight="strong">
+        Computer Vision Pipelines
+      </Text>
+      , and build predictive ML models with intuitive web interfaces.
     </>
   ),
 };
@@ -96,9 +107,18 @@ const about: About = {
     title: "Scope & Engineering Focus",
     description: (
       <>
-        {person.firstName} is an AI &amp; Machine Learning Engineer specializing in transforming complex data into robust, deployable intelligent systems. His core expertise spans developing private, offline Retrieval-Augmented Generation (RAG) architectures with local LLMs, real-time object tracking using YOLO and Supervision, and regularized predictive regression systems with interactive web UIs.
-        <br /><br />
-        <Text as="span" weight="strong">Available for:</Text> Machine Learning Engineering roles, Generative AI &amp; RAG consulting, and Computer Vision development contracts.
+        {person.firstName} is an AI &amp; Machine Learning Engineer specializing in transforming
+        complex data into robust, deployable intelligent systems. His core expertise spans
+        developing private, offline Retrieval-Augmented Generation (RAG) architectures with local
+        LLMs, real-time object tracking using YOLO and Supervision, and regularized predictive
+        regression systems with interactive web UIs.
+        <br />
+        <br />
+        <Text as="span" weight="strong">
+          Available for:
+        </Text>{" "}
+        Machine Learning Engineering roles, Generative AI &amp; RAG consulting, and Computer Vision
+        development contracts.
       </>
     ),
   },
@@ -116,28 +136,39 @@ const about: About = {
             concepts.
           </>,
           <>
-            Focused on simplifying complex topics such as neural networks and regression models
-            for a student audience.
+            Focused on simplifying complex topics such as neural networks and regression models for
+            a student audience.
           </>,
         ],
         images: [],
       },
     ],
-  },studies: {
+  },
+  studies: {
     display: true,
     title: "Education & Certifications",
     institutions: [
       {
         name: "Capital University",
-        description: <>Bachelor of Computer Science, Giza, Egypt (Expected Graduation: July 2028).</>,
+        description: (
+          <>Bachelor of Computer Science, Giza, Egypt (Expected Graduation: July 2028).</>
+        ),
       },
       {
         name: "EraaSoft Academy",
         description: (
           <>
-            <strong>AI Diploma:</strong> Comprehensive professional diploma covering Machine Learning, 
-            Deep Learning, Computer Vision, and generative architectures (Completed August 2026)[cite: 6].
-            <div style={{ marginTop: "12px", borderRadius: "8px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)" }}>
+            <strong>AI Diploma:</strong> Comprehensive professional diploma covering Machine
+            Learning, Deep Learning, Computer Vision, and generative architectures (Completed August
+            2026)[cite: 6].
+            <div
+              style={{
+                marginTop: "12px",
+                borderRadius: "8px",
+                overflow: "hidden",
+                border: "1px solid rgba(255,255,255,0.1)",
+              }}
+            >
               <img
                 src="/images/certificates/eraasoft-ai-diploma.jpg"
                 alt="EraaSoft AI Diploma Certificate"
@@ -151,9 +182,17 @@ const about: About = {
         name: "Creativa Hub (ITIDA / EME)",
         description: (
           <>
-            <strong>Machine Learning Program:</strong> 25-hour specialized offline program focused on foundational 
-            data pipelines, model optimization, and deployment of the "Spaceship Titanic" project (Completed February 2025)[cite: 5].
-            <div style={{ marginTop: "12px", borderRadius: "8px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)" }}>
+            <strong>Machine Learning Program:</strong> 25-hour specialized offline program focused
+            on foundational data pipelines, model optimization, and deployment of the "Spaceship
+            Titanic" project (Completed February 2025)[cite: 5].
+            <div
+              style={{
+                marginTop: "12px",
+                borderRadius: "8px",
+                overflow: "hidden",
+                border: "1px solid rgba(255,255,255,0.1)",
+              }}
+            >
               <img
                 src="/images/certificates/creativa-machine-learning.jpg"
                 alt="Creativa ITIDA Machine Learning Certificate"
@@ -173,9 +212,9 @@ const about: About = {
         title: "Generative AI & RAG Systems",
         description: (
           <>
-            Architecting end-to-end Retrieval-Augmented Generation pipelines using LangChain
-            and ChromaDB. Deploying quantized local LLMs (Phi-3, Qwen) via Ollama for private,
-            offline contextual document Q&A.
+            Architecting end-to-end Retrieval-Augmented Generation pipelines using LangChain and
+            ChromaDB. Deploying quantized local LLMs (Phi-3, Qwen) via Ollama for private, offline
+            contextual document Q&A.
           </>
         ),
         tags: [
@@ -190,7 +229,8 @@ const about: About = {
         description: (
           <>
             Supervised and unsupervised learning, regularized regression modeling, neural network
-            classification (ANNs), and extensive feature engineering, data imputation, and metric evaluation.
+            classification (ANNs), and extensive feature engineering, data imputation, and metric
+            evaluation.
           </>
         ),
         tags: [
@@ -218,8 +258,8 @@ const about: About = {
         title: "Model Deployment & Interactive Interfaces",
         description: (
           <>
-            Building and deploying intuitive web interfaces for machine learning workflows and
-            local AI assistants using Gradio and Streamlit.
+            Building and deploying intuitive web interfaces for machine learning workflows and local
+            AI assistants using Gradio and Streamlit.
           </>
         ),
         tags: [

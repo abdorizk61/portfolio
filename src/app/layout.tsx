@@ -13,7 +13,7 @@ import {
   RevealFx,
   SpacingToken,
 } from "@once-ui-system/core";
-import { Footer, Header, RouteGuard, Providers } from "@/components";
+import { Footer, Header, RouteGuard, Providers, MatrixRain } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle, home, person } from "@/resources";
 
 export async function generateMetadata() {
@@ -52,7 +52,7 @@ export default async function RootLayout({
               (function() {
                 try {
                   const root = document.documentElement;
-                  const defaultTheme = 'system';
+                  const defaultTheme = 'dark';
                   
                   // Set defaults from config
                   const config = ${JSON.stringify({
@@ -73,18 +73,7 @@ export default async function RootLayout({
                     root.setAttribute('data-' + key, value);
                   });
                   
-                  // Resolve theme
-                  const resolveTheme = (themeValue) => {
-                    if (!themeValue || themeValue === 'system') {
-                      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                    }
-                    return themeValue;
-                  };
-                  
-                  // Apply saved theme
-                  const savedTheme = localStorage.getItem('data-theme');
-                  const resolvedTheme = resolveTheme(savedTheme);
-                  root.setAttribute('data-theme', resolvedTheme);
+                  root.setAttribute('data-theme', 'dark');
                   
                   // Apply any saved style overrides
                   const styleKeys = Object.keys(config);
@@ -108,11 +97,12 @@ export default async function RootLayout({
           as="body"
           background="page"
           fillWidth
-          style={{ minHeight: "100vh" }}
+          style={{ minHeight: "100vh", position: "relative" }}
           margin="0"
           padding="0"
           horizontal="center"
         >
+          <MatrixRain />
           <RevealFx fill position="absolute">
             <Background
               mask={{

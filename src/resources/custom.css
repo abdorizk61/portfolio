@@ -1,69 +1,178 @@
-/* :root {
-  /*
-  /* Override default variables here */
-  /*
-  --font-size-display-multiplier:   1;
-  --font-size-heading-multiplier:   1;
-  --font-size-body-multiplier:      1;
-  --font-size-label-multiplier:     1;
+:root,
+[data-theme="dark"],
+[data-theme="light"],
+html,
+body {
+  /* ── Pure Dark/Black Backgrounds ── */
+  --page-background: #000000 !important;
+  --surface-background: rgba(0, 0, 0, 0.88) !important;
+  --surface-border: rgba(0, 255, 65, 0.25) !important;
 
-  --line-height-display-multiplier: 1;
-  --line-height-heading-multiplier: 1;
-  --line-height-body-multiplier:    1;
-  --line-height-label-multiplier:   1;
+  /* ── Matrix Neon Green Palette (#00FF41 / #00E559) ── */
+  --matrix-neon: #00ff41;
+  --matrix-neon-hover: #00e559;
+  --matrix-dark: #001a08;
+  --matrix-border: rgba(0, 255, 65, 0.3);
+  --matrix-glow: 0 0 16px rgba(0, 255, 65, 0.65);
 
-  --default-border:        var(--neutral-border-medium);
+  /* ── Override Once UI Brand Scheme (Eliminate all cyan/blue/teal) ── */
+  --scheme-brand-100: #000c03;
+  --scheme-brand-200: #001e08;
+  --scheme-brand-300: #003d12;
+  --scheme-brand-400: #00661f;
+  --scheme-brand-500: #00992e;
+  --scheme-brand-600: #00cc3e;
+  --scheme-brand-700: #00ff41;
+  --scheme-brand-800: #00e559;
+  --scheme-brand-900: #38ff6e;
+  --scheme-brand-1000: #85ffa7;
+  --scheme-brand-1100: #c2ffce;
+  --scheme-brand-1200: #f0fff3;
 
-  /*
-  /* Example setup for custom colors */
-  /* Generate at: https://once-ui.com/customize */
-  /*
-  --scheme-brand-100: #08002f;
-  --scheme-brand-200:  #04025c;
-  --scheme-brand-300:  #1f398e;
-  --scheme-brand-400:  #3856ae;
-  --scheme-brand-500:  #5071cc;
-  --scheme-brand-600:  #6f94f1;
-  --scheme-brand-700:  #8db3ff;
-  --scheme-brand-800:  #b2dbff;
-  --scheme-brand-900:  #bfe8ff;
-  --scheme-brand-1000: #ccf6ff;
-  --scheme-brand-1100: #d2fcff;
-  --scheme-brand-1200: #d2fcff;
-  --scheme-brand-600-10: rgba(111,148,241,0.1);
-  --scheme-brand-600-30: rgba(111,148,241,0.3);
-  --scheme-brand-600-50: rgba(111,148,241,0.5);
+  --scheme-brand-600-10: rgba(0, 255, 65, 0.1);
+  --scheme-brand-600-30: rgba(0, 255, 65, 0.3);
+  --scheme-brand-600-50: rgba(0, 255, 65, 0.5);
 
-  --scheme-accent-100:  #030b10;
-  --scheme-accent-200:  #0d181d;
-  --scheme-accent-300:  #364248;
-  --scheme-accent-400:  #505d64;
-  --scheme-accent-500:  #69777e;
-  --scheme-accent-600:  #8a989f;
-  --scheme-accent-700:  #a8b7bf;
-  --scheme-accent-800:  #c8d7df;
-  --scheme-accent-900:  #d5e4ec;
-  --scheme-accent-1000: #e2f1f9;
-  --scheme-accent-1100: #e9f8ff;
-  --scheme-accent-1200: #efffff;
-  --scheme-accent-600-10: rgba(138,152,159,0.1);
-  --scheme-accent-600-30: rgba(138,152,159,0.3);
-  --scheme-accent-600-50: rgba(138,152,159,0.5);
+  /* Force override any cyan, aqua, or blue fallback tokens to pure matrix green */
+  --scheme-cyan-100: #000c03;
+  --scheme-cyan-200: #001e08;
+  --scheme-cyan-300: #003d12;
+  --scheme-cyan-400: #00cc3e;
+  --scheme-cyan-500: #00ff41;
+  --scheme-cyan-600: #00e559;
+  --scheme-aqua-400: #00ff41;
+  --scheme-blue-400: #00ff41;
 
-  --scheme-neutral-100:  #020b10;
-  --scheme-neutral-200:  #0b181d;
-  --scheme-neutral-300:  #344248;
-  --scheme-neutral-400:  #4f5d64;
-  --scheme-neutral-500:  #68777e;
-  --scheme-neutral-600:  #89989f;
-  --scheme-neutral-700:  #a7b7be;
-  --scheme-neutral-800:  #c7d7df;
-  --scheme-neutral-900:  #d4e4ec;
-  --scheme-neutral-1000: #e1f2f9;
-  --scheme-neutral-1100: #e7f8ff;
-  --scheme-neutral-1200: #eeffff;
-  --scheme-neutral-600-10: rgba(137,152,159,0.1);
-  --scheme-neutral-600-30: rgba(137,152,159,0.3);
-  --scheme-neutral-600-50: rgba(137,152,159,0.5);
-  /*
-}*/
+  /* Functional brand tokens */
+  --brand-solid-strong: #00ff41 !important;
+  --brand-solid-medium: #00e559 !important;
+  --brand-solid-weak: #003d12 !important;
+  --brand-on-solid-strong: #000000 !important;
+  --brand-on-solid-weak: #00ff41 !important;
+  --brand-background-strong: #00ff41 !important;
+  --brand-background-medium: #003d12 !important;
+  --brand-background-weak: #001e08 !important;
+  --brand-border-strong: #00ff41 !important;
+  --brand-border-medium: rgba(0, 255, 65, 0.45) !important;
+  --brand-border-weak: rgba(0, 255, 65, 0.2) !important;
+  --brand-alpha-strong: rgba(0, 255, 65, 0.35) !important;
+  --brand-alpha-medium: rgba(0, 255, 65, 0.18) !important;
+  --brand-alpha-weak: rgba(0, 255, 65, 0.08) !important;
+  --brand-medium: #00ff41 !important;
+  --brand-strong: #00ff41 !important;
+
+  /* Neutral dark backgrounds */
+  --neutral-background-strong: #030603 !important;
+  --neutral-background-medium: #050a05 !important;
+  --neutral-background-weak: #081008 !important;
+
+  background-color: #000000 !important;
+  color: #f1f5f9;
+}
+
+/* ── Custom Cyber Selection ── */
+::selection {
+  background: #00ff41 !important;
+  color: #000000 !important;
+}
+
+/* ── Custom Cyber Matrix Scrollbar ── */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #004d18;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 255, 65, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00ff41;
+  box-shadow: 0 0 10px #00ff41;
+}
+
+/* ── Global Link & Accent Styling ── */
+a {
+  color: inherit;
+}
+
+/* ── Blinking Cursor Keyframes ── */
+@keyframes matrixBlink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.matrix-cursor {
+  display: inline-block;
+  color: #00ff41;
+  animation: matrixBlink 1s infinite;
+  font-weight: 700;
+}
+
+/* ── Action Buttons: Outlined Neon Green Turning Solid on Hover ── */
+.matrix-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background: transparent;
+  color: #00ff41;
+  border: 1px solid #00ff41;
+  border-radius: 4px;
+  font-family: var(--font-code, monospace);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+.matrix-btn:hover {
+  background: #00ff41;
+  color: #000000;
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.85), 0 0 40px rgba(0, 255, 65, 0.4);
+  transform: translateY(-1px);
+}
+
+.matrix-btn:active {
+  transform: translateY(0);
+}
+
+/* ── Alert Pill: Red Outlined Box with Red Monospace Text ── */
+.alert-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+  color: #ef4444;
+  font-family: var(--font-code, monospace);
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.25);
+  box-sizing: border-box;
+}
+
+.alert-pill-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #ef4444;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px #ef4444;
+  animation: matrixBlink 1.4s infinite;
+}

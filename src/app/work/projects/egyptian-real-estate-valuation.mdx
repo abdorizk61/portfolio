@@ -1,0 +1,91 @@
+---
+title: "Egyptian Real Estate Price Prediction"
+publishedAt: "2026-10-01"
+summary: "An end-to-end property valuation platform utilizing machine learning stacking ensembles, real estate telemetry data, and an interactive cyberpunk-styled Streamlit interface."
+images:
+  - "/images/projects/real-estate/real-estate.png"
+tags:
+  - Python
+  - Scikit-Learn
+  - Streamlit
+  - Pandas
+  - NumPy
+  - Machine Learning
+link: "https://github.com/abdorizk61"
+team:
+  - name: "Abdelrahman Rizk"
+    role: "AI & ML Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/abdelrahman-rizk-33b67b345"
+---
+
+## Project Overview
+
+The Egyptian real estate market is notoriously heterogeneous, with property values influenced heavily by compounding factors such as location micro-zones, payment terms (cash vs. multi-year installments), property categories (villas, duplexes, penthouses, apartments), and inflation trends.
+
+This project delivers an **end-to-end automated property valuation system** designed to predict real estate prices accurately across Cairo, Giza, New Cairo, Sheikh Zayed, and coastal hubs. The solution integrates an advanced regression modeling pipeline with an interactive, dark-mode **Cyber-HUD valuation terminal** designed for real-time inference and telemetry monitoring.
+
+---
+
+## Architecture & Machine Learning Pipeline
+
+```
+[ Raw Property Listings ]
+          │
+          ▼
+[ Data Cleaning & Normalization ]
+   ├─ Location standardization & outlier trimming
+   ├─ Feature extraction: price per sqm, bedrooms/bathrooms ratio
+   └─ Log1p transformation on skewed continuous targets
+          │
+          ▼
+[ Feature Engineering & Preprocessing Pipeline ]
+   ├─ Categorical encoding (Target Encoding + One-Hot)
+   ├─ Missing value imputation strategies
+   └─ Standard scaling on numeric dimensions
+          │
+          ▼
+[ Model Stacking Ensemble ]
+   ├─ Base Models: LightGBM, XGBoost, CatBoost, GradientBoosting
+   ├─ Meta-Estimator: Ridge Regression
+   └─ Cross-validation: 5-Fold Stratified K-Fold
+          │
+          ▼
+[ Real-Time Inference Engine (Streamlit HUD) ]
+   ├─ Latency telemetry (< 15ms per inference)
+   ├─ Confidence interval boundaries (±15% valuation bracket)
+   └─ Model parameter payload inspection
+```
+
+---
+
+## Key Highlights & Innovations
+
+- **Log-Space Target Transformation:** Mitigated heavy right-skewed pricing distributions by training estimators on $\log(1 + y)$ and mapping predictions back via $\exp(y) - 1$.
+- **9-Feature Telemetry Schema:** Evaluates properties across 9 core signals:
+  - `location`: Micro-region / governorate identifier
+  - `description`: Text features enriched with amenity tags (parking, pool, gym, security)
+  - `type`: Architectural property class
+  - `size_sqm`: Total surface area in square meters
+  - `bedrooms` & `bathrooms`: Layout composition
+  - `is_studio`: Binary indicator for open-plan units
+  - `payment_method`: Cash, installment, or mixed terms
+  - `available_from`: Availability timeline
+- **Interactive Cyber-HUD Interface:** High-contrast terminal dashboard featuring live telemetry metrics, Cairo timestamp synchronization, dynamic confidence meters, and debug payload drawers.
+
+---
+
+## Tech Stack & Tools
+
+- **Core Languages & Libraries:** Python, Scikit-Learn, Pandas, NumPy
+- **Modeling & Evaluation:** Stacking Regressors, Gradient Boosting, Cross-Validation, RMSE & $R^2$ metrics
+- **Deployment & User Interface:** Streamlit, Custom Cyber-HUD CSS, Joblib serialization
+- **Environment & Workflow:** Linux (Fedora), Git / GitHub, VS Code
+
+---
+
+## Codebase & Links
+
+- **GitHub Repository:** [View Codebase](https://github.com/abdorizk61)
+- **Developer Profile:** [Abdelrahman Rizk on LinkedIn](https://www.linkedin.com/in/abdelrahman-rizk-33b67b345)
+
