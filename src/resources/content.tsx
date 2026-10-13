@@ -149,6 +149,193 @@ const about: About = {
     title: "Education & Certifications",
     institutions: [
       {
+        name: "DeepLearning.AI & Coursera",
+        description: (
+          <>
+            <div style={{ marginBottom: "6px" }}>
+              <strong style={{ color: "#f8fafc" }}>Linear Algebra for Machine Learning and Data Science</strong>
+              <span
+                style={{
+                  display: "inline-block",
+                  marginLeft: "8px",
+                  fontSize: "0.8rem",
+                  color: "#06b6d4",
+                  fontFamily: "var(--font-code, monospace)",
+                }}
+              >
+                — October 2026
+              </span>
+            </div>
+            <div
+              style={{
+                fontSize: "0.85rem",
+                color: "#94a3b8",
+                marginBottom: "8px",
+                fontStyle: "italic",
+              }}
+            >
+              Foundations of ML Mathematics
+            </div>
+            <p style={{ margin: "0 0 10px 0", color: "#cbd5e1" }}>
+              Covered core mathematical foundations for machine learning, including vector spaces,
+              linear transformations, eigenvalues/eigenvectors, and matrix factorizations.
+            </p>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "6px",
+                marginBottom: "12px",
+              }}
+            >
+              {[
+                "Linear Algebra",
+                "Eigenvalues & Eigenvectors",
+                "PCA",
+                "Matrix Decompositions",
+                "Mathematics for ML",
+              ].map((skill) => (
+                <span
+                  key={skill}
+                  style={{
+                    fontSize: "0.75rem",
+                    padding: "2px 8px",
+                    borderRadius: "4px",
+                    background: "rgba(6, 182, 212, 0.08)",
+                    border: "1px solid rgba(6, 182, 212, 0.25)",
+                    color: "#67e8f9",
+                    fontFamily: "var(--font-code, monospace)",
+                  }}
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+            <div style={{ marginBottom: "12px" }}>
+              <a
+                href="https://coursera.org/share/486790131097f775f59bab42d991508b"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  fontSize: "0.85rem",
+                  color: "#06b6d4",
+                  textDecoration: "underline",
+                  textUnderlineOffset: "3px",
+                  fontFamily: "var(--font-code, monospace)",
+                  fontWeight: 600,
+                }}
+              >
+                <span>Verify Credential ↗</span>
+              </a>
+            </div>
+            <div
+              style={{
+                marginTop: "12px",
+                borderRadius: "8px",
+                overflow: "hidden",
+                border: "1px solid rgba(6, 182, 212, 0.2)",
+              }}
+            >
+              <img
+                src="/images/certificates/cert_image-1.png"
+                alt="Linear Algebra for Machine Learning and Data Science Certificate - DeepLearning.AI & Coursera"
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
+            </div>
+          </>
+        ),
+      },
+      {
+        name: "iCareer & Plan International Egypt",
+        description: (
+          <>
+            <div style={{ marginBottom: "6px" }}>
+              <strong style={{ color: "#f8fafc" }}>Digitera Program – Business Track</strong>
+              <span
+                style={{
+                  display: "inline-block",
+                  marginLeft: "8px",
+                  fontSize: "0.8rem",
+                  color: "#06b6d4",
+                  fontFamily: "var(--font-code, monospace)",
+                }}
+              >
+                — September 2026
+              </span>
+            </div>
+            <div
+              style={{
+                fontSize: "0.85rem",
+                color: "#10b981",
+                marginBottom: "4px",
+                fontStyle: "italic",
+              }}
+            >
+              Professional &amp; Business Development
+            </div>
+            <div
+              style={{
+                fontSize: "0.8rem",
+                color: "#94a3b8",
+                marginBottom: "8px",
+              }}
+            >
+              Strategic Partners: Danish-Arab Partnership Programme (DAPP) &amp; Ministry of Foreign Affairs of Denmark
+            </div>
+            <p style={{ margin: "0 0 10px 0", color: "#cbd5e1" }}>
+              Successfully completed the Digitera Business Track under the Youth Inclusion and Employment Program (&ldquo;Ready for Tomorrow&rdquo;), demonstrating strong commitment to business fundamentals, career development, and workplace readiness.
+            </p>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "6px",
+                marginBottom: "12px",
+              }}
+            >
+              {[
+                "Business Fundamentals",
+                "Professional Development",
+                "Career Readiness",
+                "Soft Skills",
+              ].map((skill) => (
+                <span
+                  key={skill}
+                  style={{
+                    fontSize: "0.75rem",
+                    padding: "2px 8px",
+                    borderRadius: "4px",
+                    background: "rgba(16, 185, 129, 0.08)",
+                    border: "1px solid rgba(16, 185, 129, 0.25)",
+                    color: "#6ee7b7",
+                    fontFamily: "var(--font-code, monospace)",
+                  }}
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+            <div
+              style={{
+                marginTop: "12px",
+                borderRadius: "8px",
+                overflow: "hidden",
+                border: "1px solid rgba(6, 182, 212, 0.2)",
+              }}
+            >
+              <img
+                src="/images/certificates/digitera-business-track.png"
+                alt="Digitera Program – Business Track Certificate - iCareer & Plan International Egypt"
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
+            </div>
+          </>
+        ),
+      },
+      {
         name: "Capital University",
         description: (
           <>Bachelor of Computer Science, Giza, Egypt (Expected Graduation: July 2028).</>

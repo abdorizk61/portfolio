@@ -13,7 +13,9 @@ export function MatrixRain() {
     if (!ctx) return;
 
     // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) return;
 
     let animationFrameId: number;
@@ -23,10 +25,8 @@ export function MatrixRain() {
     const fontSize = 14;
     let columns = Math.floor(width / fontSize);
 
-    // Array of y-coordinates for falling drops in each column
     let drops: number[] = [];
     for (let i = 0; i < columns; i++) {
-      // Random starting positions so rain is dispersed immediately
       drops[i] = Math.floor(Math.random() * -50);
     }
 
@@ -42,7 +42,6 @@ export function MatrixRain() {
 
     window.addEventListener("resize", handleResize);
 
-    // Frame rate limiting: 24 fps for subtle cinematic feel and minimal CPU usage
     const fps = 24;
     const interval = 1000 / fps;
     let lastTime = 0;
@@ -62,36 +61,30 @@ export function MatrixRain() {
       if (delta < interval) return;
       lastTime = currentTime - (delta % interval);
 
-      // Faint fade trail: Dark pure black with slight opacity
-      // This leaves a gentle, subtle trailing fade
-      ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
+      // Deep obsidian trailing fade
+      ctx.fillStyle = "rgba(9, 9, 11, 0.09)";
       ctx.fillRect(0, 0, width, height);
 
-      ctx.font = `${fontSize}px "Geist Mono", "Courier New", monospace`;
+      ctx.font = `${fontSize}px "Geist Mono", monospace`;
 
       for (let i = 0; i < drops.length; i++) {
-        // Exclusively falling 0s and 1s as requested
         const char = Math.random() > 0.5 ? "1" : "0";
         const x = i * fontSize;
         const y = drops[i] * fontSize;
 
-        // Draw only if on screen
         if (y > 0 && y < height + fontSize) {
-          // Subtle, faint dark green for regular stream
-          // Occasional faint brighter head for the leading stream
-          const isLead = Math.random() < 0.05;
+          const isLead = Math.random() < 0.04;
 
           if (isLead) {
-            ctx.fillStyle = "rgba(0, 255, 65, 0.35)"; // subtle Matrix green highlight
+            ctx.fillStyle = "rgba(6, 182, 212, 0.4)"; // Electric Cyan lead
           } else {
-            // Very dark subtle green (faint background ambiance)
-            ctx.fillStyle = "rgba(0, 70, 20, 0.28)";
+            // Delicate faint neural cyan/emerald stream
+            ctx.fillStyle = "rgba(4, 95, 110, 0.22)";
           }
 
           ctx.fillText(char, x, y);
         }
 
-        // Reset column when it goes past bottom or with random variance
         if (y > height && Math.random() > 0.975) {
           drops[i] = 0;
         }
@@ -121,7 +114,7 @@ export function MatrixRain() {
         height: "100vh",
         pointerEvents: "none",
         zIndex: 0,
-        opacity: 0.85,
+        opacity: 0.75,
       }}
     />
   );

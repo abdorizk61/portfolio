@@ -3,6 +3,7 @@ import { home, about, person, baseURL, routes } from "@/resources";
 import { Mailchimp, InteractiveTerminal, HeroSection } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
+import { getPosts } from "@/utils/utils";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -15,6 +16,8 @@ export async function generateMetadata() {
 }
 
 export default function Home() {
+  const allProjects = getPosts(["src", "app", "work", "projects"]);
+
   return (
     <Column maxWidth="l" gap="xl" paddingY="12" horizontal="center" fillWidth>
       <Schema
@@ -31,15 +34,15 @@ export default function Home() {
         }}
       />
 
-      {/* ── Matrix SOC Hero Section ── */}
+      {/* ── Neural AI Hero Section & Impact Metrics Bar ── */}
       <RevealFx fillWidth>
         <HeroSection />
       </RevealFx>
 
-      {/* ── Featured Projects Section ── */}
+      {/* ── Featured Projects Section (With Filter Pills & Dual View) ── */}
       <div id="projects" style={{ width: "100%", scrollMarginTop: "80px" }}>
         <RevealFx translateY="16" delay={0.2} fillWidth>
-          <Projects range={[1, 1]} />
+          <Projects posts={allProjects} showFilters={true} />
         </RevealFx>
       </div>
 
@@ -50,7 +53,7 @@ export default function Home() {
             {/* Section header */}
             <Column fillWidth gap="4">
               <Row fillWidth vertical="center" gap="12">
-                <Heading as="h2" variant="heading-strong-l" style={{ color: "#ffffff" }}>
+                <Heading as="h2" variant="heading-strong-l" style={{ color: "#f8fafc" }}>
                   Terminal
                 </Heading>
                 <span
@@ -58,14 +61,14 @@ export default function Home() {
                     display: "inline-flex",
                     alignItems: "center",
                     padding: "2px 8px",
-                    border: "1px solid rgba(0, 255, 65, 0.4)",
-                    backgroundColor: "rgba(0, 255, 65, 0.08)",
-                    color: "#00FF41",
+                    border: "1px solid rgba(6, 182, 212, 0.4)",
+                    backgroundColor: "rgba(6, 182, 212, 0.08)",
+                    color: "#06b6d4",
                     fontFamily: "var(--font-code, monospace)",
                     fontSize: "0.75rem",
                     letterSpacing: "0.08em",
-                    borderRadius: "2px",
-                    boxShadow: "0 0 8px rgba(0, 255, 65, 0.25)",
+                    borderRadius: "4px",
+                    boxShadow: "0 0 8px rgba(6, 182, 212, 0.25)",
                   }}
                 >
                   interactive
@@ -76,7 +79,7 @@ export default function Home() {
                 <Text
                   as="span"
                   style={{
-                    color: "#00FF41",
+                    color: "#06b6d4",
                     fontFamily: "var(--font-code, monospace)",
                     fontWeight: 700,
                   }}
@@ -113,11 +116,6 @@ export default function Home() {
           </Row>
         </Column>
       )}
-
-      {/* ── Additional Projects ── */}
-      <RevealFx translateY="16" delay={0.4} fillWidth>
-        <Projects range={[2]} />
-      </RevealFx>
 
       {/* ── Contact Section ── */}
       <div id="contact" style={{ width: "100%", scrollMarginTop: "80px" }}>

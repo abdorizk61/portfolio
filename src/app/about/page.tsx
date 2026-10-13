@@ -193,6 +193,20 @@ export default function About() {
                         </React.Fragment>
                       ),
                   )}
+                <a
+                  href="/resume.pdf"
+                  download="Abdelrahman_Rizk_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="matrix-btn"
+                  style={{
+                    padding: "6px 14px",
+                    fontSize: "0.8rem",
+                    borderRadius: "20px",
+                  }}
+                >
+                  [ RESUME ↓ ]
+                </a>
               </Row>
             )}
           </Column>

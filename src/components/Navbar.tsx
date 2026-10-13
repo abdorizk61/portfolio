@@ -34,7 +34,6 @@ export function Navbar() {
       if (elem) {
         elem.scrollIntoView({ behavior: "smooth" });
         if (targetId === "terminal") {
-          // Focus terminal input if available
           setTimeout(() => {
             const input = elem.querySelector("input");
             if (input) input.focus();
@@ -52,13 +51,13 @@ export function Navbar() {
         top: 0,
         zIndex: 50,
         width: "100%",
-        backgroundColor: scrolled ? "rgba(0, 0, 0, 0.92)" : "rgba(0, 0, 0, 0.8)",
+        backgroundColor: scrolled ? "rgba(9, 9, 11, 0.92)" : "rgba(9, 9, 11, 0.75)",
         backdropFilter: "blur(16px)",
         WebkitBackdropFilter: "blur(16px)",
-        borderBottom: "1px solid rgba(0, 255, 65, 0.22)",
+        borderBottom: "1px solid rgba(6, 182, 212, 0.2)",
         boxShadow: scrolled
-          ? "0 4px 30px rgba(0, 0, 0, 0.8), 0 1px 0 rgba(0, 255, 65, 0.2)"
-          : "0 2px 16px rgba(0, 0, 0, 0.5)",
+          ? "0 4px 30px rgba(0, 0, 0, 0.8), 0 1px 0 rgba(6, 182, 212, 0.15)"
+          : "0 2px 16px rgba(0, 0, 0, 0.4)",
         transition: "all 0.3s ease",
       }}
     >
@@ -73,20 +72,20 @@ export function Navbar() {
           boxSizing: "border-box",
         }}
       >
-        {/* ── Left Side Logo: Monospace, bold, neon green ── */}
+        {/* ── Left Side Logo: Monospace, Electric Cyan ── */}
         <Link
           href="/"
           style={{
             fontFamily: "var(--font-code, monospace)",
             fontSize: "1.1rem",
             fontWeight: 800,
-            color: "#00FF41",
+            color: "#06b6d4",
             textDecoration: "none",
             letterSpacing: "0.08em",
-            textShadow: "0 0 10px rgba(0, 255, 65, 0.65), 0 0 20px rgba(0, 255, 65, 0.25)",
+            textShadow: "0 0 12px rgba(6, 182, 212, 0.5), 0 0 24px rgba(6, 182, 212, 0.2)",
             display: "inline-flex",
             alignItems: "center",
-            gap: "4px",
+            gap: "6px",
             transition: "all 0.2s ease",
           }}
           className="cyber-logo"
@@ -117,10 +116,10 @@ export function Navbar() {
                 style={{
                   fontFamily: "var(--font-code, monospace)",
                   fontSize: "0.875rem",
-                  color: isActive ? "#00FF41" : "#94a3b8",
+                  color: isActive ? "#06b6d4" : "#94a3b8",
                   textDecoration: "none",
                   letterSpacing: "0.05em",
-                  textShadow: isActive ? "0 0 8px rgba(0, 255, 65, 0.6)" : "none",
+                  textShadow: isActive ? "0 0 8px rgba(6, 182, 212, 0.6)" : "none",
                   transition: "all 0.2s ease",
                   padding: "4px 2px",
                   position: "relative",
@@ -131,6 +130,35 @@ export function Navbar() {
               </Link>
             );
           })}
+          <a
+            href="/resume.pdf"
+            download="Abdelrahman_Rizk_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontFamily: "var(--font-code, monospace)",
+              fontSize: "0.8rem",
+              color: "#06b6d4",
+              textDecoration: "none",
+              letterSpacing: "0.06em",
+              padding: "4px 12px",
+              borderRadius: "4px",
+              border: "1px solid rgba(6, 182, 212, 0.4)",
+              background: "rgba(6, 182, 212, 0.08)",
+              transition: "all 0.2s ease",
+              fontWeight: 600,
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.background = "#06b6d4";
+              (e.currentTarget as HTMLAnchorElement).style.color = "#000000";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.background = "rgba(6, 182, 212, 0.08)";
+              (e.currentTarget as HTMLAnchorElement).style.color = "#06b6d4";
+            }}
+          >
+            resume ↓
+          </a>
         </nav>
 
         {/* ── Mobile Hamburger Toggle ── */}
@@ -142,8 +170,8 @@ export function Navbar() {
           style={{
             display: "none",
             background: "transparent",
-            border: "1px solid rgba(0, 255, 65, 0.4)",
-            color: "#00FF41",
+            border: "1px solid rgba(6, 182, 212, 0.4)",
+            color: "#06b6d4",
             fontFamily: "var(--font-code, monospace)",
             padding: "6px 10px",
             borderRadius: "4px",
@@ -160,8 +188,8 @@ export function Navbar() {
         <div
           className="mobile-nav-drawer"
           style={{
-            borderTop: "1px solid rgba(0, 255, 65, 0.2)",
-            background: "rgba(0, 0, 0, 0.96)",
+            borderTop: "1px solid rgba(6, 182, 212, 0.2)",
+            background: "rgba(9, 9, 11, 0.98)",
             padding: "16px 24px",
             display: "flex",
             flexDirection: "column",
@@ -190,18 +218,42 @@ export function Navbar() {
               &gt; {link.label}
             </Link>
           ))}
+          <a
+            href="/resume.pdf"
+            download="Abdelrahman_Rizk_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+            style={{
+              fontFamily: "var(--font-code, monospace)",
+              fontSize: "0.95rem",
+              color: "#06b6d4",
+              textDecoration: "none",
+              letterSpacing: "0.08em",
+              padding: "10px 14px",
+              borderRadius: "4px",
+              border: "1px solid rgba(6, 182, 212, 0.4)",
+              background: "rgba(6, 182, 212, 0.08)",
+              display: "inline-block",
+              textAlign: "center",
+              fontWeight: 600,
+              marginTop: "4px",
+            }}
+          >
+            &gt; download resume ↓
+          </a>
         </div>
       )}
 
       {/* ── Responsive CSS ── */}
       <style jsx global>{`
         .matrix-nav-link:hover {
-          color: #00ff41 !important;
-          text-shadow: 0 0 10px rgba(0, 255, 65, 0.8), 0 0 20px rgba(0, 255, 65, 0.3) !important;
+          color: #06b6d4 !important;
+          text-shadow: 0 0 10px rgba(6, 182, 212, 0.8), 0 0 20px rgba(6, 182, 212, 0.3) !important;
         }
         .cyber-logo:hover {
-          color: #00ff41 !important;
-          text-shadow: 0 0 16px rgba(0, 255, 65, 0.9) !important;
+          color: #22d3ee !important;
+          text-shadow: 0 0 16px rgba(6, 182, 212, 0.9) !important;
         }
         @media (max-width: 640px) {
           .desktop-nav {

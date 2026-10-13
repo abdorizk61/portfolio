@@ -24,11 +24,11 @@ type OutputLine = TextLine | BlankLine | DividerLine;
 // ─── Colour map ───────────────────────────────────────────────────────────────
 
 const COLORS: Record<string, string> = {
-  input: "#f1f5f9", // near-white  – what the user typed
-  output: "#94a3b8", // slate-400   – normal output
-  success: "#00FF41", // Matrix neon green
-  warning: "#fbbf24", // amber-400   – accent / headers
-  error: "#f87171", // red-400     – error messages
+  input: "#f1f5f9", // near-white – user input
+  output: "#94a3b8", // slate-400 – normal output
+  success: "#06b6d4", // Electric cyan accent
+  warning: "#10b981", // Neural emerald accent
+  error: "#f87171", // red-400 – error messages
 };
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -40,7 +40,7 @@ const out = (text: string, type: TextLine["type"] = "output"): OutputLine => ({ 
 const link = (label: string, href: string, external = false): OutputLine => ({
   type: "output",
   html: true,
-  text: `<a href="${href}" style="color:#00FF41;text-decoration:underline;cursor:pointer;" ${external ? 'target="_blank" rel="noopener noreferrer"' : 'target="_self"'}>${label}</a>`,
+  text: `<a href="${href}" style="color:#06b6d4;text-decoration:underline;cursor:pointer;" ${external ? 'target="_blank" rel="noopener noreferrer"' : 'target="_self"'}>${label}</a>`,
 });
 
 // ─── Command registry ─────────────────────────────────────────────────────────
@@ -69,6 +69,8 @@ const COMMANDS: Record<string, () => OutputLine[]> = {
     { type: "blank" },
     out("  📍  Giza, Egypt"),
     out("  🎓  B.Sc. Computer Science — Capital University (exp. 2028)"),
+    out("  📜  Linear Algebra for ML — DeepLearning.AI & Coursera (2026)"),
+    out("  💼  Digitera Program (Business Track) — iCareer & Plan Int. (2026)"),
     out("  🏫  AI Diploma — EraaSoft Academy  (2026)"),
     out("  🏅  ML Program — Creativa Hub / ITIDA  (2025)"),
     { type: "blank" },
@@ -374,7 +376,7 @@ export function InteractiveTerminal() {
           {/* Prompt */}
           <span
             style={{
-              color: "#4ade80",
+              color: "#06b6d4",
               fontSize: "clamp(12px, 2vw, 13px)",
               flexShrink: 0,
               userSelect: "none",
@@ -404,7 +406,7 @@ export function InteractiveTerminal() {
               color: "#f8fafc",
               fontSize: "clamp(12px, 2vw, 13px)",
               fontFamily: "inherit",
-              caretColor: "#4ade80",
+              caretColor: "#06b6d4",
             }}
           />
         </div>
@@ -461,12 +463,12 @@ export function InteractiveTerminal() {
               boxShadow: "0 1px 3px rgba(0,0,0,0.3)",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.background = "rgba(16,185,129,0.2)";
-              (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(52,211,153,0.7)";
-              (e.currentTarget as HTMLButtonElement).style.color = "#34d399";
+              (e.currentTarget as HTMLButtonElement).style.background = "rgba(6,182,212,0.18)";
+              (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(6,182,212,0.6)";
+              (e.currentTarget as HTMLButtonElement).style.color = "#22d3ee";
               (e.currentTarget as HTMLButtonElement).style.transform = "translateY(-1px)";
               (e.currentTarget as HTMLButtonElement).style.boxShadow =
-                "0 3px 10px rgba(16,185,129,0.25)";
+                "0 3px 12px rgba(6,182,212,0.25)";
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.08)";
@@ -476,7 +478,7 @@ export function InteractiveTerminal() {
               (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 1px 3px rgba(0,0,0,0.3)";
             }}
           >
-            <span style={{ color: "#34d399", fontSize: "11px", opacity: 0.85 }}>$</span> {cmd}
+            <span style={{ color: "#06b6d4", fontSize: "11px", opacity: 0.9 }}>$</span> {cmd}
           </button>
         ))}
       </div>

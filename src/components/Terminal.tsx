@@ -29,6 +29,8 @@ const COMMANDS: Record<string, () => OutputLine[]> = {
     { type: "blank" },
     { type: "output", text: "  📍 Location : Giza, Egypt" },
     { type: "output", text: "  🎓 Degree   : B.Sc. Computer Science — Capital University" },
+    { type: "output", text: "  📜 Cert     : Linear Algebra for ML — DeepLearning.AI & Coursera" },
+    { type: "output", text: "  💼 Program  : Digitera Business Track — iCareer & Plan Int." },
     { type: "output", text: "  🏫 Training : AI Diploma — EraaSoft Academy" },
     { type: "blank" },
     {
