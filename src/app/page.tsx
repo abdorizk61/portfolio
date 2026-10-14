@@ -1,6 +1,6 @@
 import { Heading, Text, RevealFx, Column, Row, Schema, Meta, Line } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
-import { Mailchimp, InteractiveTerminal, HeroSection } from "@/components";
+import { Mailchimp, InteractiveTerminal, HeroSection, ScrollReset } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
 import { getPosts } from "@/utils/utils";
@@ -20,6 +20,7 @@ export default function Home() {
 
   return (
     <Column maxWidth="l" gap="xl" paddingY="12" horizontal="center" fillWidth>
+      <ScrollReset />
       <Schema
         as="webPage"
         baseURL={baseURL}

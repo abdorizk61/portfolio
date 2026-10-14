@@ -15,3 +15,4 @@ export { HeroFrame } from "@/components/HeroFrame";
 export { CircularHUD } from "@/components/CircularHUD";
 export { MatrixRain } from "@/components/MatrixRain";
 export { HeroSection } from "@/components/HeroSection";
+export { ScrollReset } from "@/components/ScrollReset";

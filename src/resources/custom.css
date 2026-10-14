@@ -79,6 +79,13 @@ body {
   color: #e2e8f0;
 }
 
+/* ── Prevent layout shift scroll jumps ── */
+*,
+*::before,
+*::after {
+  overflow-anchor: none;
+}
+
 /* ── Custom Selection ── */
 ::selection {
   background: #06b6d4 !important;

@@ -180,15 +180,16 @@ export function InteractiveTerminal() {
   const inputRef = useRef<HTMLInputElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
 
-  // Scroll to bottom on new output
+  const isFirstRender = useRef(true);
+
+  // Scroll to bottom on new output (skip on initial render)
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [lines]);
-
-  // Autofocus on mount
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
 
   const execCommand = useCallback((raw: string) => {
     const cmd = raw.trim().toLowerCase();

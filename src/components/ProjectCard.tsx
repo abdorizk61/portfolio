@@ -335,15 +335,21 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               overflow: "hidden",
               borderBottom: "1px solid rgba(255,255,255,0.06)",
               background: "#0d1117",
+              aspectRatio: "16 / 9",
+              width: "100%",
             }}
           >
             <div
               style={{
+                width: "100%",
+                height: "100%",
+                aspectRatio: "16 / 9",
                 transform: cardHovered ? "scale(1.025)" : "scale(1)",
                 transition: "transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)",
               }}
             >
               <Carousel
+                aspectRatio="16 / 9"
                 sizes="(max-width: 960px) 100vw, 960px"
                 items={images.map((image) => ({
                   slide: image,

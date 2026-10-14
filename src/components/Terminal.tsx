@@ -155,15 +155,16 @@ export function Terminal() {
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Auto-scroll to bottom whenever output changes
+  const isFirstRender = useRef(true);
+
+  // Auto-scroll to bottom whenever output changes (skip initial render)
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [lines]);
-
-  // Focus input on mount
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
 
   const runCommand = (raw: string) => {
     const cmd = raw.trim().toLowerCase();
